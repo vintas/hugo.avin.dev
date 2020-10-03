@@ -1,1 +1,17 @@
 version = 1
+
+test_patterns = [
+  "tests/*_test.go",
+  "**/*_test.go"
+]
+
+[[analyzers]]
+name = "go"
+enabled = true
+
+  [analyzers.meta]
+  import_paths = ["github.com/deepsourcelabs/web-app/backend"]
+  import_root = "github.com/deepsourcelabs/web-app"
+  dependencies_vendored = true
+  build_tags = ["darwin"]
+  cgo_enabled = false
